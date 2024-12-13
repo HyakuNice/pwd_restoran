@@ -68,8 +68,8 @@
 </head>
 <body>
     <div class="create-form">
-        <h2>Registrasi Menu</h2>
-        <form class="form-group" action="{{ route('store') }}" method="post">
+        <h2>Edit Menu</h2>
+        <form class="form-group" action="{{ url('/update/'.$menus->id) }}" method="post">
           @csrf
             <div class="form-group">
                 <label for="name">Nama Menu :</label>
@@ -90,14 +90,15 @@
                 <label for="role">Role :</label>
                 <input type="text" id="role" name="role" placeholder="" required>
             </div>
-            <div class="form-group">
-               <select name="kategori_id" id="kategori_id">
-                <option value="0">Makanan</option>
-                <option value="1">Minuman</option>
-               </select>
-            </div>
 
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <select name="kategori_id" id="kategori_id">
+                 <option value="0">Makanan</option>
+                 <option value="1">Minuman</option>
+                </select>
+             </div>
+
+            <a href="{{route('landingPage')}}"><button type="submit">Submit</button></a>
         </form>
     </div>
 </body>
